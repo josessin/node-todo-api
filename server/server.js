@@ -8,10 +8,12 @@ var {User}=require("./models/user.js");
 
 var app = express();
 
-app.post("/todos",(req,res)=>{
+app.use(bodyParser.json());
 
+app.post("/todos",(req,res)=>{
+    console.log(req.body);
 })
 
 app.listen(3000,()=>{
-    console.log("Server started on port 3000");
+    console.log("Svr started on port 3000");
 })
