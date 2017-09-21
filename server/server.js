@@ -8,6 +8,8 @@ var { Todo } = require("./models/todo.js");
 var { User } = require("./models/user.js");
 
 var app = express();
+//setting envirom port for servers
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 //save a todo to the database route
@@ -58,8 +60,8 @@ app.get("/todos/:id", (req, res) => {
 
 });
 
-app.listen(3000, () => {
-    console.log("Svr started on port 3000");
+app.listen(port, () => {
+    console.log(`Svr started on port ${port}`);
 })
 
 
